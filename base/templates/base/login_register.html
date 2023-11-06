@@ -3,13 +3,7 @@
 
 
 {% block content %}
-
-
-<main class="auth layout">
-
-	<!-- login section -->
-
-
+    <main class="auth layout">
 	{% if page == 'login' %}
       <div class="container">
         <div class="layout__box">
@@ -18,14 +12,14 @@
               <h3>Login</h3>
             </div>
           </div>
-
           <div class="layout__body">
             <h2 class="auth__tagline">Find your study partner</h2>
+
             <form class="form" action="" method="POST">
 		    {% csrf_token %}
               <div class="form__group form__group">
-                <label for="room_name">Email</label>
-                <input id="username" name="email" type="email" placeholder="e.g. johwick49@gmail.com`" />
+                <label for="room_name">Username</label>
+                <input id="username" name="username" type="text" placeholder="e.g. dennis_ivy" />
               </div>
               <div class="form__group">
                 <label for="password">Password</label>
@@ -65,31 +59,27 @@
           </div>
         </div>
       </div>
-
- 
       {% else %}
-
-
-      <!-- registration section -->
 
       <div class="container">
         <div class="layout__box">
           <div class="layout__boxHeader">
             <div class="layout__boxTitle">
-              <h3>Register</h3>
+              <h3>Sign up</h3>
             </div>
           </div>
           <div class="layout__body">
             <h2 class="auth__tagline">Find your study partner</h2>
 
             <form class="form" action="" method="POST">
-		    {% csrf_token %}
-		    {% for field in form %}
-	            <div class="form__group form__group">
-          	  	  <label for="room_name">{{field.label}}</label>
-            			{{field}}
-          	    </div>
-		    {% endfor %}
+		{% csrf_token %}
+		
+		{% for field in form %}
+              <div class="form__group form__group">
+		      <label for="fullname">{{field.label}}</label>
+		      {{field}}
+              </div>
+		{% endfor %}
 
               <button class="btn btn--main" type="submit">
                 <svg
@@ -108,20 +98,19 @@
                   ></path>
                 </svg>
 
-                Sign Up
+                Register
               </button>
             </form>
 
             <div class="auth__action">
               <p>Already have an account?</p>
-	      <a href="{% url 'login' %}" class="btn btn--link">Log In</a>
+	      <a href="{% url 'login' %}" class="btn btn--link">Login</a>
             </div>
           </div>
         </div>
       </div>
 
       {% endif %}
-
     </main>
 {% endblock content %}
 

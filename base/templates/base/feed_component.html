@@ -1,5 +1,5 @@
-{% for room in rooms %}
 <div class="roomListRoom">
+{% for room in rooms %}
     <div class="roomListRoom__header">
 	    <a href="#" class="roomListRoom__author">  <!-- correct user-profile url -->
             <div class="avatar avatar--small">
@@ -35,5 +35,5 @@
         </a>
         <p class="roomListRoom__topic">{{room.topic.name}}</p>
     </div>
-</div>
-{% endfor %}          
+{% endfor %}
+</div>   
