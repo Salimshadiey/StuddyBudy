@@ -1,7 +1,7 @@
 <div class="roomListRoom">
 {% for room in rooms %}
     <div class="roomListRoom__header">
-	    <a href="#" class="roomListRoom__author">  <!-- correct user-profile url -->
+	    <a href="{% url 'user-profile' room.host.id %}" class="roomListRoom__author">  <!-- correct user-profile url -->
             <div class="avatar avatar--small">
                 <img src="{{room.host.avatar.url}}" />
             </div>
