@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-6q@(01&4u25jwt&-+ik&po%r_b)fa3_oho+-kv6g9e%we#&ogc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bdcd-41-90-69-41.ngrok-free.app']
 
 
 # Application definition
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
      'rest_framework',
      "corsheaders",
 ]
+
+AUTH_USER_MODEL = 'base.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -128,6 +130,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_URL = '/images/'
+
+
+MEDIA_ROOT = BASE_DIR / 'static/images'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
